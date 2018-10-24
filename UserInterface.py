@@ -5,13 +5,6 @@ import pygame as pyg
 
 from maze import Maze
 
-DIR = 'img/'
-
-
-def refresh():
-    """Clean all graphics elements"""
-    pyg.display.flip()
-
 
 class UserInterface:
     """ Manage graphical user interface. """
@@ -41,7 +34,7 @@ class UserInterface:
     def load_element(self):
         """Loading all sprites"""
         for item in UserInterface.ELEMENTS:
-            setattr(self, item, pyg.image.load(DIR + item + ".png").convert())
+            setattr(self, item, pyg.image.load('img/' + item + ".png").convert())
 
     def show_text(self, message):
         """Show remaining item on the top left"""
