@@ -17,7 +17,7 @@ Fichiers : gameplay.py, maze.py, userinterface.py,  main.py, data + images
 import pygame
 
 from gameplay import GamePlay
-from userinterface import UserInterface, refresh
+from userinterface import UserInterface
 
 keyboard_input = {pygame.K_DOWN: 'player.move_y(40)',
                   pygame.K_UP: 'player.move_y(-40)',
@@ -33,6 +33,10 @@ def start_game():
     interface = UserInterface()
     player = GamePlay(interface)
     continue_game = True
+
+    def refresh():
+        """Clean all graphics elements"""
+        pygame.display.flip()
 
     while 'user playing' and continue_game:
 
