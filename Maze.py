@@ -1,3 +1,6 @@
+# -*- coding: utf-8 -*-
+
+
 def read_data_file():
     """Get level of labyrinth from data file"""
     with open('data', 'r') as my_file:
