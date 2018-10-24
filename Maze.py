@@ -1,4 +1,10 @@
-from gameplay import read_data_file
+def read_data_file():
+    """Get level of labyrinth from data file"""
+    with open('data', 'r') as my_file:
+        data = my_file.read().split('\n')
+        return data
+    # if fail to read file
+    return False
 
 
 class Maze:
