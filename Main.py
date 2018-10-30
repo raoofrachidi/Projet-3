@@ -16,8 +16,8 @@ Fichiers : gameplay.py, maze.py, userinterface.py,  main.py, data + images
 
 import pygame
 
-from gameplay import GamePlay
-from userinterface import UserInterface
+from Gameplay import GamePlay
+from Userinterface import UserInterface
 
 keyboard_input = {pygame.K_DOWN: 'player.move_y(40)',
                   pygame.K_UP: 'player.move_y(-40)',
