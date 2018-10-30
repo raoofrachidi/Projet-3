@@ -24,16 +24,21 @@ class GamePlay:
         self.player.position = self.player.position.move(0, y)
 
     def check_objects(self):
-        """When player is next to a chest, that remove item on UI"""
-        pos = (self.player.position[0], self.player.position[1])
+        """When player is next to a chest, that remove item"""
+        position = (self.player.position[0], self.player.position[1])
+        self.player.objects = (self.player.first_object + self.player.second_object + self.player.third_object)
 
         # compare player position with objects
-        if pos in self.player.objects:
+        if position in self.player.first_object:
             # delete item when taken
-            self.player.objects.remove(pos)
+            self.player.first_object.remove(position)
+        if position in self.player.second_object:
+            self.player.second_object.remove(position)
+        if position in self.player.third_object:
+            self.player.third_object.remove(position)
 
         # compare player position with keeper position
-        if pos == self.player.keeper_position:
+        if position == self.player.keeper_position:
             self.check_end_game()
             # end game
             return False
