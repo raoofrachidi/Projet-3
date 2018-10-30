@@ -3,7 +3,7 @@
 import random
 import pygame
 
-from maze import Maze
+from Maze import Maze
 
 
 class UserInterface:
